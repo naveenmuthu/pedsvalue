@@ -23,7 +23,7 @@
         }
 
         .navbar {
-            padding: 0;
+            padding: 0;  /* Takes away default padding */
             font-family: 'Source Sans Pro', serif;
         }
 
@@ -33,11 +33,11 @@
 
         h1, h2, h3, h4, h5, h6 {
             font-family: 'Source Sans Pro', serif;
-            color: #828e96;
+            color: #6bc8c6;
         }
 
         body {
-            margin-top: 125px;
+            margin-top: 125px; /* Margin bottom by navbar height */
             margin-bottom: 60px; /* Margin bottom by footer height */
         }
 
@@ -45,7 +45,6 @@
             position: fixed;
             bottom: 0;
             width: 100%;
-            /* Set the fixed height of the footer here */
             height: 50px;
             background-color: #d5edf0;
         }
@@ -102,7 +101,7 @@
 
     <footer>
         <div class="container-fluid fixed-bottom text-center" id="footer">
-        <h4>Sponsored by the Association of Pediatric Program Directors</h4>
+        <h4 style="color: #828e96">Sponsored by the Association of Pediatric Program Directors</h4>
         </div>
     </footer>
 </body>

@@ -12,20 +12,55 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 
+    <!-- Fonts from style guide -->
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet">
+
     <style>
+        html {
+            position: relative;
+            min-height: 100%;
+        }
+
         .navbar {
             padding: 0;
+            font-family: 'Source Sans Pro', serif;
         }
+
+        .navbar a {
+            color: #828e96;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Source Sans Pro', serif;
+            color: #828e96;
+        }
+
+        body {
+            margin-top: 125px;
+            margin-bottom: 60px; /* Margin bottom by footer height */
+        }
+
+        footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            /* Set the fixed height of the footer here */
+            height: 50px;
+            background-color: #d5edf0;
+        }
+
     </style>
 
+
 </head>
-<body>
+<body></body>
 
     <nav class="navbar navbar-light bg-light fixed-top">
         <a class="navbar-brand" href="#">
-            <img src="{% static "CHOP_HVP_Logo_Horz_Primary.png" %}" width="275" height="115" height=alt="Logo">
+            <img src="{% static "CHOP_HVP_Logo_Horz_Primary.png" %}" width="250" height="100" height=alt="Logo">
         </a>
-        <ul class="nav justify-content-end">
+        <ul class="nav justify-content-end" style="font-size: x-large">
             <li class="nav-item">
                 <a class="nav-link" href="#">Home</a>
             </li>
@@ -51,16 +86,24 @@
         </ul>
     </nav>
 
-    <div class="container-fluid">
+    <div class="container-fluid" id="pagecontent">
         <div class="row">
             <div class="col-md-1"></div>
             <div class="col-md-10">
+
             {% block content %}
             {% endblock %}
+
             </div>
             <div class="col-md-1"></div>
+
         </div>
     </div>
 
+    <footer>
+        <div class="container-fluid fixed-bottom text-center" id="footer">
+        <h4>Sponsored by the Association of Pediatric Program Directors</h4>
+        </div>
+    </footer>
 </body>
 </html>

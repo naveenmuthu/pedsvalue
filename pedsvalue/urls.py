@@ -13,13 +13,23 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
-from django.conf.urls import url
-from django.contrib import admin
 
+# All we do is give each of the five pages from views a url
+from django.contrib import admin
 from pedsvaluecalc import views
+from django.conf.urls import url
+from django.contrib.auth import views as auth_views
 
 urlpatterns = [
     url(r'^$', views.home),
     url(r'^home/', views.home),
+    url(r'^about/', views.about),
+    url(r'^references/', views.references),
+    url(r'^curriculum/', views.curriculum),
+    url(r'^calculator/', views.calculator),
     url(r'^admin/', admin.site.urls),
+    url(r'^login/$', auth_views.login, {'template_name': 'login.html'}, name='login'),
+    url(r'^logout/$', auth_views.logout, {'next_page': '/home/'}, name='logout'),
+    url(r'^signup/$', views.signup, name='signup'),
+    url(r'^', views.home),
 ]

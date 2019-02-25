@@ -1,0 +1,41 @@
+{% extends 'template.html' %}
+
+{% block style %}
+
+{% endblock %}
+
+{% block script %}
+
+{% endblock %}
+
+{% block content %}
+
+ <<div class="container-fluid bg-body">
+            <div class="row" style="padding-top: 15vh">
+                <div class="col-sm-4">
+                </div>
+                <div class="col-sm-4 text-center" style="font-size: large">
+                    <form method="post">
+                        {% csrf_token %}
+                        {{ form.as_p }}
+                        <button type="submit">Login</button>
+                    </form>
+                </div>
+                <div class="col-sm-4">
+                </div>
+            </div>
+            <div class="row" style="padding-top: 2vh">
+                <div class="col-sm-12 text-center" style="font-size: medium">
+                    <p>
+                        <a href='/signup/'>Click here to create an account if you don't have one</a></li>
+                    </p>
+                    <p>
+                        If you've forgotten your password,
+                        <a href="mailto:Maya.Dewan@cchmc.org?Subject=Pediatric Value Curriculum Account" target="_top">
+                            email us</a>.
+                    </p>
+                </div>
+            </div>
+</div>
+    
+{% endblock %}

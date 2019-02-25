@@ -108,9 +108,48 @@
         }
 
 
+
         $(document).ready(function(){
             $("#tags").typeahead({ source:testName });
             $("#labtags").typeahead({ source:labName });
+
+            // Imaging or Procedure addition function
+            $("#tags").keypress(function(){
+                var x = event.keyCode || event.which;
+                if (x !== 13) return;
+
+                var newTest = $("#tags").val();
+                if (newTest === "") return;
+
+
+                var pos = jQuery.inArray(newTest,testName);
+                if (pos === -1) return;
+
+                chosenTests.push(pos);
+                currentCost += parseInt(testPrice[pos]);
+
+                insertTable();
+                thermometer();
+            });
+
+            //Lab addition function
+            $("#labtags").keypress(function(){
+                var x = event.keyCode || event.which;
+                if (x !== 13) return;
+
+                var newLab = $("#labtags").val();
+                if (newLab === "") return;
+
+                var pos = jQuery.inArray(newLab,labName);
+                if (pos === -1) return;
+
+                chosenLabs.push(pos);
+                currentCost += parseInt(labPrice[pos]);
+
+                insertTable();
+                thermometer();
+            });
+
             insertTable();
             thermometer();
         });

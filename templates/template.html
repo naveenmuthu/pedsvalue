@@ -16,10 +16,21 @@
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet">
 
+    <!-- For Google Analytics -->
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-103046638-1', 'auto');
+            ga('send', 'pageview');
+    </script>
+
     <style>
         html {
-            position: relative;
-            min-height: 100%;
+            position: relative; /* Think I need these for sticky footer */
+            min-height: 100%; /* Think I need these for sticky footer */
         }
 
         .navbar {
@@ -37,8 +48,11 @@
         }
 
         body {
-            margin-top: 125px; /* Margin bottom by navbar height */
+            margin-top: 175px; /* Margin top by navbar height */
             margin-bottom: 60px; /* Margin bottom by footer height */
+            height: 100%;
+            font-family: 'Merriweather', sans-serif;
+            color: #828e96;
         }
 
         footer {
@@ -49,11 +63,16 @@
             background-color: #d5edf0;
         }
 
+        {% block style %}
+        {% endblock %}
+
     </style>
 
+    {% block script %}
+    {% endblock %}
 
 </head>
-<body></body>
+<body>
 
     <nav class="navbar navbar-light bg-light fixed-top">
         <a class="navbar-brand" href="#">
@@ -104,5 +123,7 @@
         <h4 style="color: #828e96">Sponsored by the Association of Pediatric Program Directors</h4>
         </div>
     </footer>
+
 </body>
+
 </html>

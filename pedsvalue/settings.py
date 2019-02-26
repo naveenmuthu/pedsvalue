@@ -25,7 +25,9 @@ SECRET_KEY = '&di!^cjdz*00+s&0$_^+j4e5wyuib@#y#zg&+jwl%-h@2f3!ca'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = (
+    '*',
+)
 
 
 # Application definition
@@ -37,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'pedsvaluecalc'
 ]
 
 MIDDLEWARE = [

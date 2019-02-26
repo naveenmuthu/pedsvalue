@@ -28,7 +28,7 @@ def references(request):
     return render(request,'reference.html',context)
 
 @login_required
-def calculator (request):
+def calculator(request):
     if request.user.is_authenticated():
         context = {'authenticated': True}
     else:
@@ -36,7 +36,7 @@ def calculator (request):
     return render(request,'calculator.html',context)
 
 @login_required
-def curriculum (request):
+def curriculum(request):
     if request.user.is_authenticated():
         context = {'authenticated': True}
     else:
